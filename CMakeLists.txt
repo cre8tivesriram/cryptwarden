@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(PasswordManager C)
+project(cryptwarden C)
 
 set(CMAKE_C_STANDARD 11)
 
@@ -7,7 +7,7 @@ set(CMAKE_C_STANDARD 11)
 find_package(OpenSSL REQUIRED)
 
 # Your source files
-add_executable(PasswordManager
+add_executable(cryptwarden
         main.c passManager.c
         banner.c banner.h
         colors.c colors.h
@@ -17,4 +17,4 @@ add_executable(PasswordManager
 )
 
 # Link OpenSSL
-target_link_libraries(PasswordManager PRIVATE OpenSSL::Crypto)
+target_link_libraries(cryptwarden PRIVATE OpenSSL::Crypto)
