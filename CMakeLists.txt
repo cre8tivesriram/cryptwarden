@@ -1,28 +1,20 @@
-cmake_minimum_required(VERSION 3.31)
+cmake_minimum_required(VERSION 3.10)
 project(PasswordManager C)
 
 set(CMAKE_C_STANDARD 11)
-set(OPENSSL_ROOT_DIR "/usr")
-set(OPENSSL_INCLUDE_DIR "/usr/include")
-set(OPENSSL_LIBRARIES "/usr/lib/x86_64-linux-gnu")
 
-# Find OpenSSL
+# Find OpenSSL properly
 find_package(OpenSSL REQUIRED)
 
-# Add your executable
-add_executable(PasswordManager main.c passManager.c
-        banner.h
-        banner.c
-        colors.h
-        colors.c
-        utility.h
-        utility.c
-        security.h
-        security.c
-        seed.h
-        seed.c
-        main.c
+# Your source files
+add_executable(PasswordManager
+        main.c passManager.c
+        banner.c banner.h
+        colors.c colors.h
+        utility.c utility.h
+        security.c security.h
+        seed.c seed.h
 )
 
-# Link OpenSSL libraries
+# Link OpenSSL
 target_link_libraries(PasswordManager PRIVATE OpenSSL::Crypto)
