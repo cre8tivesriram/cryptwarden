@@ -74,6 +74,6 @@ void showBanner() {
 
     // Subtitle with glitch effect and spacing
     printf("                                                                            ");
-    glitchEffect("-- by cre8tivesriram --", 30000, green);
+    glitchEffect("-- by sudosriram --", 30000, green);
     printf("%s\n", reset);
 }
